@@ -33,7 +33,7 @@ router.put('/:id', _util.isAuth, async (req, res) => {
     });
   } else {
     res.status(404).send({
-      msg: 'User Not Found'
+      message: 'User Not Found'
     });
   }
 });
@@ -53,7 +53,7 @@ router.post('/signin', async (req, res) => {
     });
   } else {
     res.status(401).send({
-      msg: 'Invalid Email or Password.'
+      message: 'Invalid Email or Password.'
     });
   }
 });
@@ -75,14 +75,14 @@ router.post('/register', async (req, res) => {
     });
   } else {
     res.status(401).send({
-      msg: 'Invalid User Data.'
+      message: 'Invalid User Data.'
     });
   }
 });
-router.get("/createadmin", async (req, res) => {
+router.get('/createadmin', async (req, res) => {
   try {
     const user = new _userModel.default({
-      name: 'Shashi',
+      name: 'Shashi Bhushan',
       email: 'shashibhushan8683@gmail.com',
       password: '1234',
       isAdmin: true
@@ -91,7 +91,7 @@ router.get("/createadmin", async (req, res) => {
     res.send(newUser);
   } catch (error) {
     res.send({
-      msg: error.message
+      message: error.message
     });
   }
 });

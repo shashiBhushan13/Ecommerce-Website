@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 function PaypalButton(props) {
-const [sdkReady, setSdkReady] = useState(false);
+  const [sdkReady, setSdkReady] = useState(false);
 
   const addPaypalSdk = async () => {
     const result = await axios.get("/api/config/paypal");
